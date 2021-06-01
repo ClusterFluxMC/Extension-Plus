@@ -1,35 +1,35 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "extp",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Extension+",
+  "description": "Extension API's non-vanilla counterpart",
   "authors": [
-    "Me!"
+    "Oliver-makes-code"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/ClusterFluxMC",
+    "sources": "https://github.com/ClusterFluxMC/extension-plus"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/extp/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.github.olivermakescode.extension.plus.ExampleMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "extp.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": "1.17.x"
   },
   "suggests": {
     "another-mod": "*"

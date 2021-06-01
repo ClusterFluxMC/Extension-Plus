@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package com.github.olivermakescode.extension.plus;
 
 import net.fabricmc.api.ModInitializer;
 
