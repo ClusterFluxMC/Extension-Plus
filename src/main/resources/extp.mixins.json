@@ -1,12 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "com.github.olivermakescode.extension.plus.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
-    "com.fabricmc.example.mixin.ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
