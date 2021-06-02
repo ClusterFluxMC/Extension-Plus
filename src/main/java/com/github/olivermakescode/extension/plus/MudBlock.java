@@ -27,11 +27,11 @@ public class MudBlock extends Block {
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(moisture);
-        stateManager.add(hardened);
+        stateManager.add(moisture).add(hardened);
     }
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (state.get(hardened)) return;
         int i = state.get(moisture);
         if (!isWaterNearby(world, pos) && !world.hasRain(pos.up())) {
             if (i > 1) {

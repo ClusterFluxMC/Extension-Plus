@@ -15,34 +15,34 @@ public class ExtBlocks {
     public static MudBlock MUD = new MudBlock(FabricBlockSettings.of(Material.SOIL).mapColor(MapColor.BROWN).ticksRandomly().jumpVelocityMultiplier(0.1F).sounds(BlockSoundGroup.ROOTED_DIRT));
     public static Block CHARCOAL = new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK));
     public static Block[] GRANITE_ORES = {
-            new Block(FabricBlockSettings.copy(Blocks.COAL_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.IRON_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.REDSTONE_ORE))
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
     };
     public static Block[] DIORITE_ORES = {
-            new Block(FabricBlockSettings.copy(Blocks.COAL_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.IRON_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.REDSTONE_ORE))
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
+            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
     };
     public static Block[] ANDESITE_ORES = {
-            new Block(FabricBlockSettings.copy(Blocks.COAL_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.IRON_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE)),
-            new Block(FabricBlockSettings.copy(Blocks.REDSTONE_ORE))
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
+            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
     };
     public static Block[][] ORES = {
             GRANITE_ORES,DIORITE_ORES,ANDESITE_ORES
