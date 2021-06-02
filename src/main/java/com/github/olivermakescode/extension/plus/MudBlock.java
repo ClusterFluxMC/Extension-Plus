@@ -6,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
@@ -18,20 +17,16 @@ import java.util.Random;
 
 public class MudBlock extends Block {
     public static IntProperty moisture = IntProperty.of("moisture", 1, 5);
-    public static BooleanProperty hardened = BooleanProperty.of("hardened");
-
     public MudBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(moisture, 5));
-        setDefaultState(this.stateManager.getDefaultState().with(hardened,true));
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(moisture).add(hardened);
+        stateManager.add(moisture);
     }
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (state.get(hardened)) return;
         int i = state.get(moisture);
         if (!isWaterNearby(world, pos) && !world.hasRain(pos.up())) {
             if (i > 1) {

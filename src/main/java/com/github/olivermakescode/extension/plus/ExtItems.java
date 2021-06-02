@@ -10,10 +10,13 @@ public class ExtItems {
     public static String modid = ExtensionPlus.modid;
 
     public static BlockItem mud = new BlockItem(ExtBlocks.MUD, new FabricItemSettings());
+    public static BlockItem hardened_mud = new BlockItem(ExtBlocks.HARDENED_MUD, new FabricItemSettings());
     public static BlockItem CHARCOAL = new BlockItem(ExtBlocks.CHARCOAL, new FabricItemSettings());
     public static Block[][] ORES = ExtBlocks.ORES;
+
     public static void register() {
         Registry.register(Registry.ITEM,new Identifier(modid, "mud"),mud);
+        Registry.register(Registry.ITEM,new Identifier(modid, "hardened_mud"),hardened_mud);
         Registry.register(Registry.ITEM,new Identifier(modid, "charcoal_block"),CHARCOAL);
 
         for (int i = 0; i < ORES.length; i++) {

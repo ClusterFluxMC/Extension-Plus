@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "extp:block/mud"
+    "all": "extp:block/ore/diorite/redstone"
   }
 }

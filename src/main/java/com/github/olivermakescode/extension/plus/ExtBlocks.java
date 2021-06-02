@@ -12,7 +12,8 @@ import net.minecraft.util.registry.Registry;
 public class ExtBlocks {
     public static String modid = ExtensionPlus.modid;
 
-    public static MudBlock MUD = new MudBlock(FabricBlockSettings.of(Material.SOIL).mapColor(MapColor.BROWN).ticksRandomly().jumpVelocityMultiplier(0.1F).sounds(BlockSoundGroup.ROOTED_DIRT));
+    public static MudBlock MUD = new MudBlock(FabricBlockSettings.of(Material.SOIL).mapColor(MapColor.BROWN).ticksRandomly().jumpVelocityMultiplier(0.2F).sounds(BlockSoundGroup.ROOTED_DIRT));
+    public static Block HARDENED_MUD = new Block(FabricBlockSettings.copy(Blocks.DIRT));
     public static Block CHARCOAL = new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK));
     public static Block[] GRANITE_ORES = {
             new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
@@ -50,6 +51,7 @@ public class ExtBlocks {
 
     public static void register() {
         Registry.register(Registry.BLOCK, new Identifier(modid, "mud"), MUD);
+        Registry.register(Registry.BLOCK, new Identifier(modid, "hardened_mud"), HARDENED_MUD);
         Registry.register(Registry.BLOCK, new Identifier(modid, "charcoal_block"), CHARCOAL);
 
         for (int i = 0; i < ORES.length; i++) {
