@@ -1,10 +1,7 @@
 package com.github.olivermakescode.extension.plus;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -15,38 +12,72 @@ public class ExtBlocks {
     public static MudBlock MUD = new MudBlock(FabricBlockSettings.of(Material.SOIL).mapColor(MapColor.BROWN).ticksRandomly().jumpVelocityMultiplier(0.2F).sounds(BlockSoundGroup.ROOTED_DIRT));
     public static Block HARDENED_MUD = new Block(FabricBlockSettings.copy(Blocks.DIRT));
     public static Block CHARCOAL = new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK));
-    public static Block[] GRANITE_ORES = {
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
-            new Block(FabricBlockSettings.copy(Blocks.GRANITE)),
+    public static Block[] ORE_ARR = {
+
     };
-    public static Block[] DIORITE_ORES = {
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-            new Block(FabricBlockSettings.copy(Blocks.DIORITE)),
-    };
-    public static Block[] ANDESITE_ORES = {
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-            new Block(FabricBlockSettings.copy(Blocks.ANDESITE)),
-    };
+    public enum ores {
+        GRANITE,
+        DIORITE,
+        ANDESITE,
+        BEDROCK (false, true),
+
+        ;
+
+        public final Block[] array;
+
+        ores() {
+            this.array = new Block[] {
+                    new Block(FabricBlockSettings.copy(Blocks.COAL_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.IRON_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE)),
+                    new RedstoneOreBlock(FabricBlockSettings.copy(Blocks.REDSTONE_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE))
+            };
+        }
+
+        ores(boolean dirt, boolean unbreakable) {
+            if (dirt)
+                this.array = new Block[] {
+                    new Block(FabricBlockSettings.copy(Blocks.COAL_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.IRON_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE)),
+                    new RedstoneOreBlock(FabricBlockSettings.copy(Blocks.REDSTONE_ORE)),
+                    new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE))
+                };
+            else if (unbreakable)
+                this.array = new Block[] {
+                        new Block(FabricBlockSettings.copy(Blocks.COAL_ORE).strength(-1.0F, 3600000.0F)),
+                        new Block(FabricBlockSettings.copy(Blocks.IRON_ORE).strength(-1.0F, 3600000.0F)),
+                        new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE).strength(-1.0F, 3600000.0F)),
+                        new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE).strength(-1.0F, 3600000.0F)),
+                        new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE).strength(-1.0F, 3600000.0F)),
+                        new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE).strength(-1.0F, 3600000.0F)),
+                        new RedstoneOreBlock(FabricBlockSettings.copy(Blocks.REDSTONE_ORE).strength(-1.0F, 3600000.0F)),
+                        new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE).strength(-1.0F, 3600000.0F))
+                };
+            else
+                this.array = new Block[] {
+                        new Block(FabricBlockSettings.copy(Blocks.COAL_ORE)),
+                        new Block(FabricBlockSettings.copy(Blocks.IRON_ORE)),
+                        new Block(FabricBlockSettings.copy(Blocks.COPPER_ORE)),
+                        new Block(FabricBlockSettings.copy(Blocks.GOLD_ORE)),
+                        new Block(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)),
+                        new Block(FabricBlockSettings.copy(Blocks.EMERALD_ORE)),
+                        new RedstoneOreBlock(FabricBlockSettings.copy(Blocks.REDSTONE_ORE)),
+                        new Block(FabricBlockSettings.copy(Blocks.LAPIS_ORE))
+                };
+        }
+    }
     public static Block[][] ORES = {
-            GRANITE_ORES,DIORITE_ORES,ANDESITE_ORES
+            ores.GRANITE.array,
+            ores.DIORITE.array,
+            ores.ANDESITE.array,
     };
 
     public static void register() {
@@ -55,13 +86,16 @@ public class ExtBlocks {
         Registry.register(Registry.BLOCK, new Identifier(modid, "charcoal_block"), CHARCOAL);
 
         for (int i = 0; i < ORES.length; i++) {
-            for (int j = 0; j < ORES[i].length; j++) {
+            Block[] arr_ = ORES[i];
+            for (int j = 0; j < arr_.length; j++) {
                 String[] nameSpace = new String [2];
-
+                System.out.println("X " + i + " Y " + j);
                 if (i == 0) nameSpace[0] = "granite";
                 else if (i == 1) nameSpace[0] = "diorite";
                 else if (i == 2) nameSpace[0] = "andesite";
                 else nameSpace[0] = "unknown";
+
+                System.out.println(nameSpace[0]);
 
                 nameSpace[1] = switch (j) {
                     case 0 -> "coal";
